@@ -48,6 +48,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
+%attr(755,root,root) %{_prefix}/bin/kconfigure
 %{_applnkdir}/Development/Tools/kconfigure.desktop
 %{_prefix}/share/apps/kconfigure/pics/*
 %{_prefix}/share/apps/kconfigure/eventsrc
