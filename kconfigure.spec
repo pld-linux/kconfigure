@@ -10,11 +10,11 @@ Source0:	http://dl.sourceforge.net/%{name}/%{name}-%{version}.tar.gz
 Source1:	http://ep09.pld-linux.org/~djurban/kde/kde-common-admin.tar.bz2
 # Source1-md5:  81e0b2f79ef76218381270960ac0f55f
 URL:		http://kconfigure.sourceforge.net/
-BuildRequires:	kdelibs-devel >= 3
-BuildRequires:	qt-devel >= 3.0.3
+BuildRequires:  autoconf
+BuildRequires:  automake
+BuildRequires:  kdelibs-devel >= 9:3.2.0
+BuildRequires:  unsermake >= 040805
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
-
-
 
 %description
 Kconfigure is a KDE program to compile the sources without the xterm
