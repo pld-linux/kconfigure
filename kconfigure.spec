@@ -6,6 +6,7 @@ Release:	1
 License:	GPL
 Group:		Development/Tools
 Source0:	http://dl.sourceforge.net/%{name}/%{name}-%{version}.tar.gz
+# Source0-md5:	f0f5f5758364a91828dd528a49fb968e
 URL:		http://kconfigure.sourceforge.net/
 BuildRequires:	kdelibs-devel >= 3
 BuildRequires:	qt-devel >= 3.0.3
