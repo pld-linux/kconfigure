@@ -1,20 +1,17 @@
 Summary:	Simplifies compiling and installing software by providing a graphical interface
 Summary(pl):	Graficzny interfejs upraszczaj±cy kompilacjê i instalowanie oprogramowania
 Name:		kconfigure
-Version:	1.2
-Release:	2
+Version:	2.1
+Release:	1
 License:	GPL
 Group:		Development/Tools
-Source0:	http://dl.sourceforge.net/%{name}/%{name}-%{version}.tar.gz
-# Source0-md5:	f0f5f5758364a91828dd528a49fb968e
-Source1:	http://ep09.pld-linux.org/~djurban/kde/kde-common-admin.tar.bz2
-# Source1-md5:	81e0b2f79ef76218381270960ac0f55f
+Source0:	http://dl.sourceforge.net/kconfigure/%{name}-%{version}.tar.gz
+# Source0-md5:	5b9094af94efdc65ec14fe7f5a7c7ef8
 URL:		http://kconfigure.sourceforge.net/
-BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	kdelibs-devel >= 9:3.2.0
 BuildRequires:	rpmbuild(macros) >= 1.129
-BuildRequires:	unsermake >= 040805
+BuildRequires:	sed >= 4.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -31,13 +28,12 @@ konfiguracji, kompilacji i instalacji ¼róde³ w graficznym interfejsie
 kconfigure.
 
 %prep
-%setup -q -a1
+%setup -q -n %{name}
+
+sed -i -e 's/^Categories=.*/Categories=Qt;KDE;Development;Building;/' kconfigure/kconfigure.desktop
 
 %build
 cp -f /usr/share/automake/config.sub admin
-export UNSERMAKE=/usr/share/unsermake/unsermake
-%{__make} -f admin/Makefile.common cvs
-
 %configure \
 	--with-qt-libraries=%{_libdir}
 
@@ -49,31 +45,30 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT \
 	kde_htmldir=%{_kdedocdir} \
-	kde_libs_htmldir=%{_kdedocdir}
+	kde_libs_htmldir=%{_kdedocdir} \
+	mangdir=%{_mandir}/man1
+
+gzip -d $RPM_BUILD_ROOT%{_mandir}/man1/kconfigure.1.gz
 
 install -d $RPM_BUILD_ROOT%{_desktopdir}
 mv -f $RPM_BUILD_ROOT%{_datadir}/applnk/Applications/kconfigure.desktop \
 	$RPM_BUILD_ROOT%{_desktopdir}
 
-echo "Categories=Qt;KDE;Development;Building;" >> $RPM_BUILD_ROOT%{_desktopdir}/kconfigure.desktop
-
-%find_lang %{name}
+%find_lang %{name} --with-kde
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
+%doc AUTHORS ChangeLog README TODO
 %attr(755,root,root) %{_bindir}/kconfigure
-%dir %{_datadir}/apps/kconfigure
-%dir %{_datadir}/apps/kconfigure/pics
-%{_datadir}/apps/kconfigure/pics/*
-%{_datadir}/apps/kconfigure/eventsrc
+%{_datadir}/apps/kconfigure
 %{_iconsdir}/hicolor/16x16/apps/kconfigure.png
-%{_iconsdir}/hicolor/16x16/mimetypes/configure.png
 %{_iconsdir}/hicolor/32x32/apps/kconfigure.png
 %{_iconsdir}/hicolor/32x32/mimetypes/configure.png
 %{_iconsdir}/hicolor/48x48/apps/kconfigure.png
 %{_iconsdir}/hicolor/48x48/mimetypes/configure.png
 %{_desktopdir}/kconfigure.desktop
 %{_datadir}/mimelnk/text/x-configure.desktop
+%{_mandir}/man1/kconfigure.1*
