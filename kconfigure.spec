@@ -2,7 +2,7 @@ Summary:	Simplifies compiling and installing software by providing a graphical i
 Summary(pl):	Graficzny interfejs upraszczaj±cy kompilacjê i instalowanie oprogramowania
 Name:		kconfigure
 Version:	1.2
-Release:	1
+Release:	2
 License:	GPL
 Group:		Development/Tools
 Source0:	http://dl.sourceforge.net/%{name}/%{name}-%{version}.tar.gz
