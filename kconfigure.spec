@@ -8,12 +8,12 @@ Group:		Development/Tools
 Source0:	http://dl.sourceforge.net/%{name}/%{name}-%{version}.tar.gz
 # Source0-md5:	f0f5f5758364a91828dd528a49fb968e
 Source1:	http://ep09.pld-linux.org/~djurban/kde/kde-common-admin.tar.bz2
-# Source1-md5:  81e0b2f79ef76218381270960ac0f55f
+# Source1-md5:	81e0b2f79ef76218381270960ac0f55f
 URL:		http://kconfigure.sourceforge.net/
-BuildRequires:  autoconf
-BuildRequires:  automake
-BuildRequires:  kdelibs-devel >= 9:3.2.0
-BuildRequires:  unsermake >= 040805
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	kdelibs-devel >= 9:3.2.0
+BuildRequires:	unsermake >= 040805
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -45,7 +45,7 @@ export UNSERMAKE=%{_datadir}/unsermake/unsermake
 %install
 rm -rf $RPM_BUILD_ROOT
 
-%{__make} install  \
+%{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT \
 	kde_htmldir=%{_kdedocdir} \
 	kde_libs_htmldir=%{_kdedocdir}
@@ -54,7 +54,7 @@ install -d $RPM_BUILD_ROOT%{_desktopdir}
 mv -f $RPM_BUILD_ROOT%{_datadir}/applnk/Applications/kconfigure.desktop \
 	$RPM_BUILD_ROOT%{_desktopdir}
 
-echo "Categories=Qt;KDE;Development;Building;" >>  $RPM_BUILD_ROOT%{_desktopdir}/kconfigure.desktop
+echo "Categories=Qt;KDE;Development;Building;" >> $RPM_BUILD_ROOT%{_desktopdir}/kconfigure.desktop
 
 %find_lang %{name}
 
