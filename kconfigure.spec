@@ -2,13 +2,14 @@ Summary:	Simplifies compiling and installing software by providing a graphical i
 Summary(pl):	Graficzny interfejs upraszczaj±cy kompilacjê i instalowanie oprogramowania
 Name:		kconfigure
 Version:	2.1
-Release:	1
+Release:	2
 License:	GPL
 Group:		Development/Tools
 Source0:	http://dl.sourceforge.net/kconfigure/%{name}-%{version}.tar.gz
 # Source0-md5:	5b9094af94efdc65ec14fe7f5a7c7ef8
 URL:		http://kconfigure.sourceforge.net/
 BuildRequires:	automake
+BuildRequires:	kdebase-devel
 BuildRequires:	kdelibs-devel >= 9:3.2.0
 BuildRequires:	rpmbuild(macros) >= 1.129
 BuildRequires:	sed >= 4.0
