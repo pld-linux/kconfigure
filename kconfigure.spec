@@ -1,5 +1,5 @@
 Summary:	Simplifies compiling and installing software by providing a graphical interface
-Summary(pl):	Graficzny interfejs upraszczaj±cy kompilacjê i instalowanie oprogramowania
+Summary(pl.UTF-8):   Graficzny interfejs upraszczajÄ…cy kompilacjÄ™ i instalowanie oprogramowania
 Name:		kconfigure
 Version:	2.1
 Release:	2
@@ -21,11 +21,11 @@ or other text terminal. Easy to use, click in konqueror the configure
 file and configure, make and install the sources in the gui with
 kconfigure.
 
-%description -l pl
-Kconfigure jest programem pod KDE s³u¿±cym do kompilacji ¼róde³ bez
-xterma czy innego terminala tekstowego. Jest ³atwy w u¿yciu, wystarczy
-klikn±æ w konquerorze na pliku configure aby przej¶æ przez proces
-konfiguracji, kompilacji i instalacji ¼róde³ w graficznym interfejsie
+%description -l pl.UTF-8
+Kconfigure jest programem pod KDE sÅ‚uÅ¼Ä…cym do kompilacji ÅºrÃ³deÅ‚ bez
+xterma czy innego terminala tekstowego. Jest Å‚atwy w uÅ¼yciu, wystarczy
+kliknÄ…Ä‡ w konquerorze na pliku configure aby przejÅ›Ä‡ przez proces
+konfiguracji, kompilacji i instalacji ÅºrÃ³deÅ‚ w graficznym interfejsie
 kconfigure.
 
 %prep
