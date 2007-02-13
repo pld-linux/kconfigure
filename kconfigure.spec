@@ -1,5 +1,5 @@
 Summary:	Simplifies compiling and installing software by providing a graphical interface
-Summary(pl.UTF-8):   Graficzny interfejs upraszczający kompilację i instalowanie oprogramowania
+Summary(pl.UTF-8):	Graficzny interfejs upraszczający kompilację i instalowanie oprogramowania
 Name:		kconfigure
 Version:	2.1
 Release:	2
