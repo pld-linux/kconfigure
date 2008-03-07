@@ -65,11 +65,8 @@ rm -rf $RPM_BUILD_ROOT
 %doc AUTHORS ChangeLog README TODO
 %attr(755,root,root) %{_bindir}/kconfigure
 %{_datadir}/apps/kconfigure
-%{_iconsdir}/hicolor/16x16/apps/kconfigure.png
-%{_iconsdir}/hicolor/32x32/apps/kconfigure.png
-%{_iconsdir}/hicolor/32x32/mimetypes/configure.png
-%{_iconsdir}/hicolor/48x48/apps/kconfigure.png
-%{_iconsdir}/hicolor/48x48/mimetypes/configure.png
+%{_iconsdir}/hicolor/*x*/apps/kconfigure.png
+%{_iconsdir}/hicolor/*x*/mimetypes/configure.png
 %{_desktopdir}/kconfigure.desktop
 %{_datadir}/mimelnk/text/x-configure.desktop
 %{_mandir}/man1/kconfigure.1*
